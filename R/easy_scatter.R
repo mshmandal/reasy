@@ -13,7 +13,7 @@
 #' easy_scatter()
 #' easy_scatter(iris,1,2)
 #' easy_scatter(df=iris, xi=1, yi=2,pch=21, bg="blue")
-easy_scatter<- function(df= datasets::iris,xi=1,yi=2,pch=21,bg="blue")
+easy_scatter<- function(df= datasets::iris,xi=1,yi=2,pch=21,bg="red")
 {
   # get the columns from the data frame
   a<- df[,xi]
