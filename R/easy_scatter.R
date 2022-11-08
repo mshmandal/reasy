@@ -5,6 +5,7 @@
 #' @param yi Integer indicating y axis column number
 #' @param pch Default 21
 #' @param bg Colour name for the points
+#' @param ... Any base R plot function arguments
 #'
 #' @return Returns a scatter plot
 #' @export
@@ -13,7 +14,7 @@
 #' easy_scatter()
 #' easy_scatter(iris,1,2)
 #' easy_scatter(df=iris, xi=1, yi=2,pch=21, bg="blue")
-easy_scatter<- function(df= datasets::iris,xi=1,yi=2,pch=21,bg="red")
+easy_scatter<- function(df= datasets::cars,xi=1,yi=2,pch=21,bg="red",...)
 {
   # get the columns from the data frame
   a<- df[,xi]
@@ -27,9 +28,11 @@ easy_scatter<- function(df= datasets::iris,xi=1,yi=2,pch=21,bg="red")
     # plot a scatter plot
     plot(a,
        b,
-       main=paste0("Scatter plot ",names(df)[xi]," vs ", names(df)[yi]),
-       xlab=names(df)[xi],
-       ylab=names(df)[yi],
+       main=paste0("Scatter plot ",tools::toTitleCase(names(df)[xi]),
+                   " vs ", tools::toTitleCase(names(df)[yi])
+                   ),
+       xlab=tools::toTitleCase(names(df)[xi]),
+       ylab=tools::toTitleCase(names(df)[yi]),
        pch=pch,
        bg=bg
     )

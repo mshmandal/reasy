@@ -4,7 +4,7 @@
 \alias{easy_scatter}
 \title{Plot an easy scatter plot from data frame object}
 \usage{
-easy_scatter(df = datasets::iris, xi = 1, yi = 2, pch = 21, bg = "blue")
+easy_scatter(df = datasets::cars, xi = 1, yi = 2, pch = 21, bg = "red", ...)
 }
 \arguments{
 \item{df}{The data frame object}
@@ -16,6 +16,8 @@ easy_scatter(df = datasets::iris, xi = 1, yi = 2, pch = 21, bg = "blue")
 \item{pch}{Default 21}
 
 \item{bg}{Colour name for the points}
+
+\item{...}{Any base R plot function arguments}
 }
 \value{
 Returns a scatter plot
